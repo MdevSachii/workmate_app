@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:workmate_app/providers/login_provider.dart';
 import 'package:workmate_app/screens/splash_screen/splash_screen.dart';
 import 'package:workmate_app/utils/other_utils/color_constants.dart';
 import 'package:workmate_app/utils/responsive/size_config.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context) => LogInProvider()),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
