@@ -89,7 +89,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           size: 20,
                           color: Colors.greenAccent,
                         ),
-                        const CustomWBox(val: 3),
+                        const CustomWBox(val: 5),
                         const CustomText(
                           text: 'Lorem ipsum dolor sit amet,',
                           fontColor: kGrey,
